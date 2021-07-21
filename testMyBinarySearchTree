@@ -1,0 +1,110 @@
+private static void testMyBinarySearchTree() {
+        MyBinarySearchTree<Integer> bst = new MyBinarySearchTree<>();
+        MyBinarySearchTree<Integer> avl = new MyBinarySearchTree<>(true);
+        int[] testList = {11, 4, 21, 25, 15, 14, 1, 9, 20, 2, 17, 26, 13, 7, 24, 30};
+        for (int i = 0; i < testList.length; i++) {
+            bst.add(testList[i]);
+            avl.add(testList[i]);
+        }
+
+        System.out.println("******************* Test Binary Search Tree Program ******************");
+
+        System.out.println("======================== Test Add Method ======================");
+        System.out.println("Expected In-Order:      [ 1 2 4 7 9 11 13 14 15 17 20 21 24 25 26 30 ]");
+        System.out.println("Actual In-Order result: [ " + bst.toString() + " ]");
+        System.out.println("Expected Pre-Order:      [ 11 4 1 2 9 7 21 15 14 13 20 17 25 24 26 30 ]");
+        System.out.println("Actual Pre-Order result: [ " + bst.preOrder() + "]");
+        System.out.println("Expected Post-Order:      [ 2 1 7 9 4 13 14 17 20 15 24 30 26 25 21 11 ]");
+        System.out.println("Actual Post-Order result: [ " + bst.postOrder() + "]");
+
+        System.out.println("======================== Test Remove Method ======================");
+        bst.remove(14);
+        System.out.println("Remove: 14");
+        System.out.println("Expected In-Order:      [ 1 2 4 7 9 11 13 15 17 20 21 24 25 26 30 ]");
+        System.out.println("Actual In-Order result: [ " + bst.toString() + " ]");
+        System.out.println("Expected Pre-Order:      [ 11 4 1 2 9 7 21 15 13 20 17 25 24 26 30 ]");
+        System.out.println("Actual Pre-Order result: [ " + bst.preOrder() + "]");
+        System.out.println("Expected Post-Order:      [ 2 1 7 9 4 13 17 20 15 24 30 26 25 21 11 ]");
+        System.out.println("Actual Post-Order result: [ " + bst.postOrder() + "]");
+
+        bst.remove(11);
+        System.out.println("Remove: 11");
+        System.out.println("Expected In-Order:      [ 1 2 4 7 9 13 15 17 20 21 24 25 26 30 ]");
+        System.out.println("Actual In-Order result: [ " + bst.toString() + " ]");
+        System.out.println("Expected Pre-Order:      [ 9 4 1 2 7 21 15 13 20 17 25 24 26 30 ]");
+        System.out.println("Actual Pre-Order result: [ " + bst.preOrder() + "]");
+        System.out.println("Expected Post-Order:      [ 2 1 7 4 13 17 20 15 24 30 26 25 21 9 ]");
+        System.out.println("Actual Post-Order result: [ " + bst.postOrder() + "]");
+
+        System.out.println("======================== Test Contain Method ======================");
+        System.out.println("Check if BST contain 17:");
+        System.out.println("Expected: true");
+        System.out.println("Result:   " + bst.contain(17));
+        System.out.println("Check if BST contain 11:");
+        System.out.println("Expected: false");
+        System.out.println("Result:   " + bst.contain(11));
+        System.out.println("Check if BST contain 4:");
+        System.out.println("Expected: true");
+        System.out.println("Result:   " + bst.contain(4));
+        System.out.println("Check if BST contain 14:");
+        System.out.println("Expected: false");
+        System.out.println("Result:   " + bst.contain(14));
+
+        System.out.println("======================== Test Height, and SizeMethod ======================");
+        System.out.println("Check the height of BST:");
+        System.out.println("Expected: 4");
+        System.out.println("Actual:   " + bst.height());
+        System.out.println("Check the size of BST:");
+        System.out.println("Expected: 14");
+        System.out.println("Actual:   " + bst.size());
+        System.out.println("===== Add 31 in BST =====");
+        bst.add(31);
+        System.out.println("Check the height of BST after add 31:");
+        System.out.println("Expected: 5");
+        System.out.println("Actual:   " + bst.height());
+        System.out.println("Check the size of BST after add 31:");
+        System.out.println("Expected: 15");
+        System.out.println("Actual:   " + bst.size());
+
+        System.out.println("******************* Test AVL Tree Program ******************");
+
+        System.out.println("======================== Test Add Method ======================");
+        System.out.println("Expected In-Order:      [ 1 2 4 7 9 11 13 14 15 17 20 21 24 25 26 30 ]");
+        System.out.println("Actual In-Order result: [ " + avl.toString() + " ]");
+        System.out.println("Expected Pre-Order:      [ 15 4 1 2 11 9 7 14 13 21 20 17 25 24 26 30 ]");
+        System.out.println("Actual Pre-Order result: [ " + avl.preOrder() + "]");
+        System.out.println("Expected Post-Order:      [ 2 1 7 9 13 14 11 4 17 20 24 30 26 25 21 15 ]");
+        System.out.println("Actual Post-Order result: [ " + avl.postOrder() + "]");
+        System.out.println("Check number of rotations:");
+        System.out.println("Expected: 3");
+        System.out.println("Actual:   " + avl.rotateCount);
+
+        System.out.println("======================== Test Remove Method ======================");
+        avl.remove(1);
+        System.out.println("Remove: 1");
+        System.out.println("Expected In-Order:      [ 2 4 7 9 11 13 14 15 17 20 21 24 25 26 30 ]");
+        System.out.println("Actual In-Order result: [ " + avl.toString() + " ]");
+        System.out.println("Expected Pre-Order:      [ 15 11 4 2 9 7 14 13 21 20 17 25 24 26 30 ]");
+        System.out.println("Actual Pre-Order result: [ " + avl.preOrder() + "]");
+        System.out.println("Expected Post-Order:      [ 2 7 9 4 13 14 11 17 20 24 30 26 25 21 15 ]");
+        System.out.println("Actual Post-Order result: [ " + avl.postOrder() + "]");
+        System.out.println("Check number of rotations: after remove 1");
+        System.out.println("Expected: 4");
+        System.out.println("Actual:   " + avl.rotateCount);
+
+        System.out.println("======================== Test Contain Method ======================");
+        System.out.println("Check if AVL contain 17:");
+        System.out.println("Expected: true");
+        System.out.println("Result:   " + avl.contain(17));
+        System.out.println("Check if AVL contain 1:");
+        System.out.println("Expected: false");
+        System.out.println("Result:   " + avl.contain(1));
+
+        System.out.println("======================== Test Height, Size, and UpdateStats Method ======================");
+        System.out.println("Check the height of AVL:");
+        System.out.println("Expected: 4");
+        System.out.println("Actual:   " + avl.height());
+        System.out.println("Check the size of AVL:");
+        System.out.println("Expected: 15");
+        System.out.println("Actual:   " + avl.size());
+    }
