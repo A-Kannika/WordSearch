@@ -1,5 +1,5 @@
 # Word Search Program
-Compressed Literature Program version 2 is a project for Data Structure course | TCSS 342 | @the University of Washington Tacoma
+Word Search is a project for Data Structure course | TCSS 342 | @the University of Washington Tacoma
 
 ## Description
 This program compares the performance of storing the words from Leo Tolstoy’s War and 
