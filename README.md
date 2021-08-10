@@ -1,5 +1,7 @@
 # Word Search Program
 Word Search is a project for Data Structure course | TCSS 342 | @the University of Washington Tacoma
+<br/>
+Word Search Program used my own LinkedList, Binary Search Tree, and AVL Tree Data Structure.
 
 ## Description
 This program compares the performance of storing the words from Leo Tolstoy’s War and 
