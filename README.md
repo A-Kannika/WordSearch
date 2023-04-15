@@ -9,10 +9,8 @@ Peace literature in LinkedList with storing them in a binary search tree. The st
 a linked list, a binary search tree, and an AVL self-balancing binary search tree.
 
 ## Getting Started
-- Build the binary search tree data structure.
-- Build the self-balancing binary search tree datastructure.
-- Use a linked list and a binary search tree to storeover 20000 pieces of data.
-- Benchmark linked list and binary search tree performance.
+- Implemented the word search program using the binary search tree and AVL Tree data structure.
+- Used a linked list and a binary search tree to store over 20000 pieces of data.
 
 ## UML Diagram
 <p align="center">
